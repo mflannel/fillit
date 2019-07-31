@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 16:39:32 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 18:19:43 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 19:35:12 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int		try_solve(t_field *field, const t_tetr_list *tetr_arr)
 		j = 0;
 		while (j < field->size)
 		{
-			if (tetr_can_insert(&tetr_arr->tetromin_data, i, j, field) == 1)
+			if (tetr_can_insert(tetr_arr->tetromin_data, i, j, field) == 1)
 			{
-				tetr_insert(&tetr_arr->tetromin_data, i, j, field);
+				tetr_insert(tetr_arr->tetromin_data, i, j, field);
 				if (try_solve(field, tetr_arr->next) == 1)
 					return (1);
 				else
-					tetr_erase(&tetr_arr->tetromin_data, i, j++, field);
+					tetr_erase(tetr_arr->tetromin_data, i, j++, field);
 			}
 			else
 				j++;

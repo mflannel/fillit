@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 13:27:31 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 18:19:43 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 19:33:47 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct			s_tetr_list
 {
-	t_tetromin			tetromin_data;
+	t_tetromin			*tetromin_data;
 	struct s_tetr_list	*next;
 }						t_tetr_list;
 
