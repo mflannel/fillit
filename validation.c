@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 16:51:05 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 17:15:46 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 17:52:54 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "error.h"
 
 int		check_file(char *line)
 {
@@ -40,10 +41,7 @@ int		check_file(char *line)
 		i++;
 	}
 	if (hcount != 4 || dcount != 12 || ncount > 5)
-	{
-		write(1, "error\n", 6);
-		exit(1);
-	}
+		error();
 	return (1);
 }
 
@@ -53,8 +51,8 @@ int		touch_validate(int touch)
 		return (1);
 	else
 	{
-		write(1, "error\n", 6);
-		exit(1);
+		error();
+		return (0);
 	}
 }
 
@@ -91,8 +89,7 @@ void	check_all(char *line, int rd)
 		|| !check_file(line)
 		|| !check_figure(line))
 	{
-		write(1, "error\n", 6);
-		exit(1);
+		error();
 	}
 }
 

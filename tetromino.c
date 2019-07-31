@@ -6,15 +6,14 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 13:47:56 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 17:03:30 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 17:48:32 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tetromino.h"
 #include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
 #include "libft/libft.h"
+#include "error.h"
 
 char		*to_letter(char *line, int w_arr[], int h_arr[], int fig_count)
 {
@@ -26,13 +25,10 @@ char		*to_letter(char *line, int w_arr[], int h_arr[], int fig_count)
 	j = 0;
 	new_line = (char *)malloc(sizeof(char) * w_arr[4] * h_arr[4] + 1);
 	if (new_line == NULL)
-		return (NULL);
+		error();
 	ft_memset(new_line, '\0', w_arr[4] * h_arr[4] + 1);
 	if (line[0] == '\n')
-	{
-		write(1, "error\n", 6);
-		exit(1);
-	}
+		error();
 	while (line[i])
 	{
 		if (line[i] == '.' && w_arr[i % 5] == 1 && h_arr[i / 5] == 1)
@@ -59,6 +55,8 @@ t_tetromin	*cr_tet(char *tetromin, int figure_counter)
 		i++;
 	}
 	tetromin_head = (t_tetromin *)malloc(sizeof(t_tetromin));
+	if (!tetromin_head)
+		error();
 	w_count(tetromin, w_arr);
 	h_count(tetromin, h_arr);
 	tetromin = to_letter(tetromin, w_arr, h_arr, figure_counter);

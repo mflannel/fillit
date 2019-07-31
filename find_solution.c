@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 16:39:32 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 17:11:42 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 17:41:26 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ void	find_solution(const t_tetr_list *tetr_arr, int size_arr)
 	while (try_solve(&field, tetr_arr) == 0)
 		field_resize(&field, ++size);
 	field_print(&field);
+	field_delete(&field);
 }

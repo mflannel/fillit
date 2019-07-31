@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:05:07 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 17:09:28 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 17:51:26 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "tetr_list.h"
 #include <fcntl.h>
 #include <unistd.h>
+#include <error.h>
 
 int		setup(char **argv)
 {
@@ -38,8 +39,7 @@ int		main(int argc, char **argv)
 	{
 		if (!setup(argv))
 		{
-			write(1, "error\n", 6);
-			return (0);
+			error();
 		}
 	}
 	else

@@ -6,16 +6,15 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 12:37:04 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/26 12:43:56 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 17:40:27 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "field.h"
 #include <fcntl.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include "error.h"
+#include "libft/libft.h"
 
 char	*create_dot_str(int size)
 {
@@ -25,7 +24,7 @@ char	*create_dot_str(int size)
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
-		return (NULL);
+		error();
 	else
 	{
 		while (i < size)
@@ -41,7 +40,7 @@ void	field_create(t_field *field, int size)
 	i = 0;
 	field->field = (char**)malloc(sizeof(char*) * (size + 1));
 	if (!(field->field))
-		return ;
+		error();
 	while (i < size)
 	{
 		field->field[i] = create_dot_str(size);

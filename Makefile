@@ -6,7 +6,7 @@
 #    By: mapryl <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/26 15:33:31 by mapryl            #+#    #+#              #
-#    Updated: 2019/07/30 21:44:30 by nick             ###   ########.fr        #
+#    Updated: 2019/07/31 17:37:33 by mapryl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,12 @@ HEAD_PATH = ./
 LIB_PATH = ./libft/
 
 SRC_FILES = create_list.c field.c find_solution.c tetromino.c validation.c \
-			w_h_counter.c main.c
+			w_h_counter.c main.c error.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRC_FILES))
 
-HEAD_FILES = field.h find_solution.h tetr_list.h tetromino.h validation.h
+HEAD_FILES = field.h find_solution.h tetr_list.h tetromino.h validation.h \
+			 error.h
 HEADERS = $(addprefix $(HEAD_PATH), $(HEAD_FILES))
 
 LIB_NAME = ./libft/libft.a
