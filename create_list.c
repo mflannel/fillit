@@ -6,13 +6,13 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 12:36:36 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 18:16:26 by mapryl           ###   ########.fr       */
+/*   Updated: 2019/07/31 18:19:43 by mflannel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tetr_list.h"
 #include <stdlib.h>
-#include <error.h>
+#include "error.h"
 
 t_tetr_list		*create_list(t_tetromin *head, struct s_tetr_list *next)
 {

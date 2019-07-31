@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 16:51:05 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 17:52:54 by mapryl           ###   ########.fr       */
+/*   Updated: 2019/07/31 18:58:43 by mflannel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int		creation(int fd, int *fig_counter, t_tetr_list **first_tetr_arr)
 			current_tetr = current_tetr->next;
 		}
 		(*fig_counter)++;
+		free(tetromin_head);
 	}
 	if (line[20] != '\0')
 		return (0);
