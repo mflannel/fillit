@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:07:39 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 18:19:43 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 19:12:09 by mflannel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 # include "tetr_list.h"
 
-int	check_file(char *line);
-int	check_figure(char *line);
-int	setup(char **argv);
-int	creation(int fd, int *fig_counter, t_tetr_list **first_tetr_arr);
+int		check_file(char *line);
+int		check_figure(char *line);
+int		setup(char **argv);
+void	creation(int fd, int *fig_counter, t_tetr_list **first_tetr_arr);
 #endif

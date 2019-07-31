@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:05:07 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 18:50:19 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 18:50:37 by mflannel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ int		setup(char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd <= -1)
 		return (-1);
-	if (!creation(fd, &figure_counter, &first_tetr_arr) || figure_counter > 26)
-		return (0);
+	creation(fd, &figure_counter, &first_tetr_arr);
+	if (figure_counter > 26)
+		error();
 	find_solution(first_tetr_arr, figure_counter);
 	return (1);
 }
@@ -38,9 +39,7 @@ int		main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (!setup(argv))
-		{
 			error();
-		}
 	}
 	else
 		return (0);
