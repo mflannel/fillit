@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   find_solution.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/31 16:39:32 by mflannel          #+#    #+#             */
+/*   Updated: 2019/07/31 17:11:42 by mflannel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "find_solution.h"
 #include "field.h"
 #include <stdlib.h>
 
-int		try_solve(t_field * field, const t_tetr_list * tetr_arr)
+int		try_solve(t_field *field, const t_tetr_list *tetr_arr)
 {
 	int		i;
 	int		j;
@@ -41,7 +53,7 @@ double	find_sqrt(int num)
 	return (g);
 }
 
-void	find_solution(const t_tetr_list * tetr_arr, int size_arr)
+void	find_solution(const t_tetr_list *tetr_arr, int size_arr)
 {
 	t_field	field;
 	int		size;
@@ -52,4 +64,3 @@ void	find_solution(const t_tetr_list * tetr_arr, int size_arr)
 		field_resize(&field, ++size);
 	field_print(&field);
 }
-

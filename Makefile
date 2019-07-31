@@ -17,7 +17,7 @@ HEAD_PATH = ./
 LIB_PATH = ./libft/
 
 SRC_FILES = create_list.c field.c find_solution.c tetromino.c validation.c \
-			w_h_counter.c
+			w_h_counter.c main.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRC_FILES))
 

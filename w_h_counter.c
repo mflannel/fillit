@@ -6,11 +6,11 @@
 /*   By: mapryl <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 17:12:06 by mapryl            #+#    #+#             */
-/*   Updated: 2019/07/26 17:12:16 by mapryl           ###   ########.fr       */
+/*   Updated: 2019/07/31 17:11:42 by mflannel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	w_count(char* line, int* w_arr)
+void	w_count(char *line, int *w_arr)
 {
 	int i;
 
@@ -30,7 +30,7 @@ void	w_count(char* line, int* w_arr)
 	}
 }
 
-void	h_count(char* line, int* h_arr)
+void	h_count(char *line, int *h_arr)
 {
 	int i;
 
