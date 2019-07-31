@@ -75,7 +75,7 @@ int		check_figure(char* line)
 
 void	check_all(char* line, int rd)
 {
-    if ((rd < 21 && line[rd - 3] != '.' && line[rd - 3] != '#')
+    if ((rd < 21 && line[rd - 2] != '.' && line[rd - 2] != '#')
         || !check_file(line)
         || !check_figure(line))
     {
@@ -123,7 +123,7 @@ int		setup(char** argv)
     fd = open(argv[1], O_RDONLY);
     if (fd <= -1)
         return (-1);
-    if (!creation(fd, &figure_counter, &first_tetr_arr))
+    if (!creation(fd, &figure_counter, &first_tetr_arr) || figure_counter > 26)
         return (0);
     find_solution(first_tetr_arr, figure_counter);
     return (1);
