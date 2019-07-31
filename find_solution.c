@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 16:39:32 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 17:41:26 by mapryl           ###   ########.fr       */
+/*   Updated: 2019/07/31 18:17:54 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ double	find_sqrt(int num)
 	return (g);
 }
 
-void	find_solution(const t_tetr_list *tetr_arr, int size_arr)
+void	find_solution(t_tetr_list *tetr_arr, int size_arr)
 {
 	t_field	field;
 	int		size;
@@ -64,4 +64,5 @@ void	find_solution(const t_tetr_list *tetr_arr, int size_arr)
 		field_resize(&field, ++size);
 	field_print(&field);
 	field_delete(&field);
+	lst_del(&tetr_arr);
 }

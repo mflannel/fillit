@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 12:36:36 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/31 17:37:58 by mapryl           ###   ########.fr       */
+/*   Updated: 2019/07/31 18:16:26 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,31 @@ t_tetr_list		*create_list(t_tetromin *head, struct s_tetr_list *next)
 	tmp->tetromin_data = *head;
 	tmp->next = next;
 	return (tmp);
+}
+
+void			lst_delone(t_tetr_list **head)
+{
+	t_tetr_list	*node_to_del;
+
+	node_to_del = *head;
+	if (node_to_del == NULL)
+		return ;
+	free(node_to_del->tetromin_data.form);
+	free(node_to_del);
+	*head = NULL;
+}
+
+void			lst_del(t_tetr_list **head)
+{
+	t_tetr_list *node_to_del;
+	t_tetr_list *next;
+
+	node_to_del = *head;
+	while (node_to_del != NULL)
+	{
+		next = node_to_del->next;
+		lst_delone(&node_to_del);
+		node_to_del = next;
+	}
+	*head = NULL;
 }

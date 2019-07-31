@@ -6,7 +6,7 @@
 /*   By: mflannel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 13:27:31 by mflannel          #+#    #+#             */
-/*   Updated: 2019/07/26 14:15:27 by mflannel         ###   ########.fr       */
+/*   Updated: 2019/07/31 18:17:09 by mapryl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ typedef struct			s_tetr_list
 }						t_tetr_list;
 
 t_tetr_list				*create_list(t_tetromin *head, t_tetr_list *next);
+void					lst_del(t_tetr_list **head);
 
 #endif
